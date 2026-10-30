@@ -1,1 +1,17 @@
+version: '3'
+services:
+  redroid:
+    image: redroid/redroid:11.0.0-latest
+    stdin_open: true
+    tty: true
+    privileged: true
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./data:/data
+    command:
+      - androidboot.hardware=redroid
+      - ro.secure=0
+      - ro.debuggable=1
+      - ro.kernel.android.checkjni=0
 
